@@ -7,10 +7,12 @@ const Header : React.FC = () => {
     return (
         <header className="header">
  		    <h1> <a href="#">Hyperhire<span>Bookstore</span></a></h1>
-             <div style={{marginLeft:"80%"}}>
+             <div style={{marginLeft:"70%"}}>
              <button onClick={()=>{ navigate("/")}}  style={{padding:"10px",fontSize:"14px",borderRadius:"50%"}}>Home</button>
               <button onClick={()=>{ navigate("/login")}}  style={{padding:"10px",fontSize:"14px",borderRadius:"50%"}}> SignIn</button>
               <button onClick={()=>{ navigate("/signup")}}  style={{padding:"10px",fontSize:"14px",borderRadius:"50%"}}>SignUp</button>
+              <span style={{color:"white",marginLeft:"20px"}}>Points : 2000 {" "}</span>
+
              </div>
         </header>
   

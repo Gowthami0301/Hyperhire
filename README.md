@@ -79,3 +79,18 @@ Reference https://www.amazon.com/books-used-books-textbooks/b?ie=UTF8&node=28315
 ![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/8.png)
 
 
+## Order Screen
+
+![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/9.png)
+
+![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/10.png)
+
+![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/11.png)
+
+## Our Points Screen
+
+![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/11.png)
+
+
+
+

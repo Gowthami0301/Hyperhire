@@ -3,6 +3,7 @@ import axios from "axios";
 import { Card, Spin, Row, Col,Tag, Button ,Input} from "antd";
 import "./BookStore.css"
 import { Book, BooksResponse } from "../../props/BookStore.props";
+import Order from "../order/Order";
 const { Meta } = Card;
 const { Search } = Input;
 
@@ -13,6 +14,10 @@ const BookStore: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(true);
+  const [orderShow, setIsOrderShow] = useState<boolean>(false);
+  const [order, setIsOrder] = useState<Book>();
+
+
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const fetchBooks = async (): Promise<void> => {
@@ -50,39 +55,53 @@ const BookStore: React.FC = () => {
   const handleSearch = (value: string): void => {
     setSearchQuery(value);
   };
+  const handleOrder = (value:Book): void => {
+    setIsOrderShow(true)
+    setIsOrder(value)
+  };
 
   const handleLoadMore = (): void => {
     if (!loading && hasMore) {
       setPage((prevPage) => prevPage + 1);
     }
+
+    
+
   };
   return (
     <div>
       <h1>Bookstore</h1>
       <Search style={{ width: 300, marginBottom: 20 }} placeholder="Search by title" onSearch={handleSearch} enterButton />
+      {orderShow==true && order?
+            <Order {...order} />:""
+            }
         <Row align={"middle"} gutter={[24, 24]}>
+     
           {filteredBooks.map((book) => (
-            <Col span={6}>
+            <><Col span={6}>
               <Card
-              size="small"
+                onClick={()=>{handleOrder(book)}}
+                size="small"
                 key={book.cover_edition_key}
-                style={{color:"white",height:300, backgroundImage:`url(https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg`,backgroundRepeat:"no-repeat",backgroundSize:"cover" }}
+                style={{ color: "white", height: 300, backgroundImage: `url(https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-M.jpg`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}
               >
                 <Meta
                   title={book.title}
-                  description={`By ${book.authors.map(item=> item.name)}`}
-                />
+                  description={`By ${book.authors.map(item => item.name)}`} />
                 <p>Price: ${Math.floor(Math.random() * 2000)}</p>
-                {book.subject.map((item,index)=>{
-                  if(index<5){
-                    return(
-                      <Tag style={{color:"white"}}>{item}</Tag>
-                    )
+                {book.subject.map((item, index) => {
+                  if (index < 5) {
+                    return (
+                      <Tag style={{ color: "white" }}>{item}</Tag>
+                    );
                   }
                 })}
               </Card>
             </Col>
+            
+            </>
           ))}
+      
         </Row>
       {loading && (
         <div style={{ textAlign: "center", marginTop: 20 }}>
