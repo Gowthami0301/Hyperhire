@@ -1,6 +1,6 @@
 ## Bookstore Host Demo Link
 
- [Demo](https://github.com/Gowthami0301/Hyperhire/)
+ [Demo](https://Gowthami0301.github.io/Hyperhire/)
 
 
 ## Requirement
@@ -17,17 +17,14 @@ Reference https://www.amazon.com/books-used-books-textbooks/b?ie=UTF8&node=28315
 4. point(price)
 5. tag(can have multiple tag list are (”fiction”, “non-fiction”, “science”, “essay”)
 
-# Frontend
+# Frontend Setup
 
-1. use REST API to get data and render a card type list
-    1. card must display title, writer, image, price, tag
-    2. design is free. but must be responsive UI
-2. apply infinite scroll
-    1. next data loading occurs when reaches 80% of the floor
-
-option: add filter or search function, will get extra point
-
----
+## Installed the required dependencies:
+   npm install react react-dom axios antd
+## Run
+    npm run start
+## Application Host 
+     http://localhost:3000
 
 # Backend Setup
 
@@ -42,6 +39,12 @@ option: add filter or search function, will get extra point
 ## Generate a Book model and migration:
     npx sequelize-cli model:generate --name Book --attributes title:string,author:string,coverImage:string,price:decimal,tag:string[]
     npx sequelize-cli db:migrate
+## Run
+    node app.js
+## Swagger UI documentation Host
+   http://localhost:4000/api-docs
+## Server Host
+   http://localhost:4000/books
 
 ## Bookstore Loading Screen
 
