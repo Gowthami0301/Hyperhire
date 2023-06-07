@@ -1,0 +1,113 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Bookstore API",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/books": {
+        "get": {
+          "summary": "Get books",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "Page number",
+              "schema": {
+                "type": "integer",
+                "default": 1
+              }
+            },
+            {
+              "name": "pageSize",
+              "in": "query",
+              "description": "Number of items per page",
+              "schema": {
+                "type": "integer",
+                "default": 10
+              }
+            },
+            {
+              "name": "searchQuery",
+              "in": "query",
+              "description": "Search query string",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "books": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Book"
+                        }
+                      },
+                      "totalCount": {
+                        "type": "integer"
+                      },
+                      "currentPage": {
+                        "type": "integer"
+                      },
+                      "totalPages": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Book": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "author": {
+              "type": "string"
+            },
+            "coverImage": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "tag": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    }
+  }
+  
