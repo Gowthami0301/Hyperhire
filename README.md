@@ -8,15 +8,6 @@ Make bookstore
 
 Reference https://www.amazon.com/books-used-books-textbooks/b?ie=UTF8&node=283155
 
-### Datas on book (please makes datas after you make RDB schema)
-
-1. title
-2. writer
-3. cover image
-    1. use this link(https://images-na.ssl-images-amazon.com/images/I/51Ga5GuElyL._AC_SX184_.jpg)
-4. point(price)
-5. tag(can have multiple tag list are (”fiction”, “non-fiction”, “science”, “essay”)
-
 # Frontend Setup
 
 ## Installed the required dependencies:
