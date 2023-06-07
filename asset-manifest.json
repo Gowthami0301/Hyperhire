@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Hyperhire/static/css/main.1a398f84.css",
-    "main.js": "/Hyperhire/static/js/main.6dabd878.js",
+    "main.css": "/Hyperhire/static/css/main.819d66fe.css",
+    "main.js": "/Hyperhire/static/js/main.f5cbeda6.js",
     "static/js/787.9a3abc77.chunk.js": "/Hyperhire/static/js/787.9a3abc77.chunk.js",
     "index.html": "/Hyperhire/index.html",
-    "main.1a398f84.css.map": "/Hyperhire/static/css/main.1a398f84.css.map",
-    "main.6dabd878.js.map": "/Hyperhire/static/js/main.6dabd878.js.map",
+    "main.819d66fe.css.map": "/Hyperhire/static/css/main.819d66fe.css.map",
+    "main.f5cbeda6.js.map": "/Hyperhire/static/js/main.f5cbeda6.js.map",
     "787.9a3abc77.chunk.js.map": "/Hyperhire/static/js/787.9a3abc77.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a398f84.css",
-    "static/js/main.6dabd878.js"
+    "static/css/main.819d66fe.css",
+    "static/js/main.f5cbeda6.js"
   ]
 }
