@@ -80,7 +80,7 @@ Reference https://www.amazon.com/books-used-books-textbooks/b?ie=UTF8&node=28315
 
 ## Our Points Screen
 
-![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/11.png)
+![alt text](https://github.com/Gowthami0301/Hyperhire/blob/master/src/assets/12.png)
 
 
 
