@@ -1,6 +1,6 @@
 const express = require('express');
 const { Op } = require('sequelize');
-const { Book } = require('../models');
+const { Order } = require('../models');
 
 const router = express.Router();
 
@@ -20,39 +20,38 @@ router.get('/', async (req, res) => {
       };
     }
 
-    const { count, rows } = await Book.findAndCountAll({
+    const { count, rows } = await Order.findAndCountAll({
       where: whereClause,
       offset,
       limit
     });
 
     res.json({
-      books: rows,
+      order: rows,
       totalCount: count,
       currentPage: page,
       totalPages: Math.ceil(count / pageSize)
     });
   } catch (error) {
-    console.error('Error retrieving books:', error);
+    console.error('Error retrieving order:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 router.post('/', async (req, res) => {
-  const { title, author, coverImage, price, tags } = req.body;
+  const { title, email,phone, price } = req.body;
 
   try {
-    const newBook = await Book.create({
+    const order = await Order.create({
       title,
-      author,
-      coverImage,
-      price,
-      tags,
-    });
+      email,
+      phone,
+      price
+        });
 
-    res.status(201).json(newBook);
+    res.status(201).json(order);
   } catch (error) {
-    console.error('Error creating book:', error);
+    console.error('Error creating order:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
